@@ -1,0 +1,90 @@
+{
+  "at": "2026-10-31T02:47:06.763Z",
+  "base": "https://iot.luo-jin-ai.com/legacy",
+  "browser": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+  "scope": "smoke",
+  "username": "browservsve5i",
+  "steps": [
+    {
+      "name": "登录页渲染",
+      "ok": true,
+      "detail": "首屏文字 223 字"
+    },
+    {
+      "name": "表单登录",
+      "ok": true,
+      "detail": "账号 browservsve5i 登录并进入城市中枢"
+    },
+    {
+      "name": "第 9 章可见且受前置锁定",
+      "ok": true,
+      "detail": "关卡显示「尚未解锁」，章节门禁生效"
+    },
+    {
+      "name": "smoke：3D 画布挂载",
+      "ok": true,
+      "detail": "canvas 1 个，WebGL=true"
+    },
+    {
+      "name": "smoke：第 1 关通关",
+      "ok": true,
+      "detail": "phase=completed score=1000"
+    },
+    {
+      "name": "smoke：学习记录可读",
+      "ok": true,
+      "detail": "登录→进入→通关→记录 闭环成立"
+    },
+    {
+      "name": "终端页：绑定表单与板子关卡",
+      "ok": true,
+      "detail": "章节 5 个，第 1 章 4 关，题型 功能验收/屏上答题"
+    },
+    {
+      "name": "终端页：开始关卡后下发考察项",
+      "ok": true,
+      "detail": "当前考察项 三灯常亮、四号熄灭 服务器读取四个引脚的电平，检查 1/2/3 号灯亮、4 号灯灭。 采样窗口 4 秒 · …；任务书代码块=true；提示条：第 1 关已开始：板子屏幕上会出现「三灯常亮、四号熄灭」。"
+    },
+    {
+      "name": "终端页：板载画面预览",
+      "ok": true,
+      "detail": "当前无已绑定终端（无硬件时不伪造画面）"
+    }
+  ],
+  "screenshots": [
+    "audit/browser/01-login.png",
+    "audit/browser/02-city.png",
+    "audit/browser/03-map-chapter9-locked.png",
+    "audit/browser/08-smoke-level01.png",
+    "audit/browser/09-smoke-reports.png",
+    "audit/browser/10-terminal-probe.png",
+    "audit/browser/11-terminal-screen.png"
+  ],
+  "smokeRun": {
+    "phase": "completed",
+    "score": 1000
+  },
+  "terminalShell": {
+    "hasBind": true,
+    "chapters": 5,
+    "levels": 4,
+    "kinds": [
+      "功能验收",
+      "功能验收",
+      "功能验收",
+      "屏上答题"
+    ]
+  },
+  "probePanel": {
+    "text": "当前考察项\n三灯常亮、四号熄灭\n\n服务器读取四个引脚的电平，检查 1/2/3 号灯亮、4 号灯灭。\n\n采样窗口 4 秒 · 板子在窗口内上报的证据才会被采信\n显示提示（−40 分）\n放弃本关",
+    "options": 0,
+    "hasCode": true,
+    "hintBtn": true,
+    "notice": "第 1 关已开始：板子屏幕上会出现「三灯常亮、四号熄灭」。"
+  },
+  "boardScreen": {
+    "shown": false,
+    "text": "",
+    "keys": 0
+  }
+}

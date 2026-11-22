@@ -1,0 +1,102 @@
+[
+  {
+    "path": "package.json",
+    "bytes": 949,
+    "sha256": "1f56c668b41f5d9b310cbced92d36742d1830eef1bcc300c23f75073fa03513f"
+  },
+  {
+    "path": "package-lock.json",
+    "bytes": 161874,
+    "sha256": "ce5785878d099d8df548e7efedb82fbc64bf16cce7e1b96a774dc1fd98d71794"
+  },
+  {
+    "path": "packages/content/package.json",
+    "bytes": 88,
+    "sha256": "c89e41d506afaeb752541fd00095f4d9873b305bbd2b66756a5d91f64209705f"
+  },
+  {
+    "path": "packages/engine/package.json",
+    "bytes": 99,
+    "sha256": "6ec815e152b0b9079b3152d625e8160832587816588336bbec0a284731a449f1"
+  },
+  {
+    "path": "packages/shared/package.json",
+    "bytes": 99,
+    "sha256": "364571af71bc0979272945f509e20422cc130e199b68d705f19fa22c05486fd8"
+  },
+  {
+    "path": "services/api/package.json",
+    "bytes": 69,
+    "sha256": "96243211b5d808373f403f4baddb0983dd233aedd9e0e007c0e4f905764a69f9"
+  },
+  {
+    "path": "apps/web/package.json",
+    "bytes": 70,
+    "sha256": "31852b82606777df2c2a82c6e8cbc2d314f8f45f1aead5ecf54ba027ac02e9d0"
+  },
+  {
+    "path": "dist/server.mjs",
+    "bytes": 367594,
+    "sha256": "8d1aad2d4c5b32c4a32dd7d6830f8cc0c7843296f5bd0884215b3c46b5b33bc3"
+  },
+  {
+    "path": "dist/server.mjs.map",
+    "bytes": 554187,
+    "sha256": "c3fddb49aeebd10cf58703ea13e94ffea37eb1f20fdb08a9e412caed92a82b9f"
+  },
+  {
+    "path": "dist/web/assets/index-CHUoTpFi.js",
+    "bytes": 289218,
+    "sha256": "e684f62d20f7724ee8cec3d0485a430eb2d9c91ccb297d0772cbd72277eca324"
+  },
+  {
+    "path": "dist/web/assets/index-CV0QiqF0.css",
+    "bytes": 50367,
+    "sha256": "b13f051db20d0d51be2a047365be62b44e2d035be8ebdb3653b6957db8ce9245"
+  },
+  {
+    "path": "dist/web/assets/index-D1-MXyaN.js",
+    "bytes": 285202,
+    "sha256": "887521def8fd003b65f754228801dffdbf3d57c59b301a33c5d1d8da560b3658"
+  },
+  {
+    "path": "dist/web/assets/index-D4e8HGTT.css",
+    "bytes": 47560,
+    "sha256": "21a60bd1819a949cfadfd1e774b9f1873f6240a4b6b5d457702712d26f4ee6f8"
+  },
+  {
+    "path": "dist/web/assets/ManagementApp-DH9C5Bl4.js",
+    "bytes": 1023,
+    "sha256": "0e8a925c25aa24f29db43f419890ca1ec75561ad9c86f3d26377ea0f3b30d8eb"
+  },
+  {
+    "path": "dist/web/assets/ManagementApp-DxAdzT3n.js",
+    "bytes": 1023,
+    "sha256": "87943aa10b27de2a9975d05a8575ecbd949097df75343a5ce62c79e7a86b4f82"
+  },
+  {
+    "path": "dist/web/assets/WorldScene-CPFyCrCH.js",
+    "bytes": 886917,
+    "sha256": "e2db362d1a33c44fde14a41ee1d654499fd84fa2446efe866a3680a18704644f"
+  },
+  {
+    "path": "dist/web/assets/WorldScene-dyvBcFQn.js",
+    "bytes": 886571,
+    "sha256": "756bd38d75a9f4acf55419391216fe85ec09753d9a8fce1846690ba8683a93dc"
+  },
+  {
+    "path": "dist/web/index.html",
+    "bytes": 508,
+    "sha256": "e11aa0ed04bbb9ca7dd6fc6c06ff78121b3a8b3880e5d64555560c22963dd0dc"
+  },
+  {
+    "path": "migrations/001_initial.sql",
+    "bytes": 6495,
+    "sha256": "aa7a9ef2efa7e42781d4314a23bae10afa09cf35569f8fa1052497efff2fdb27"
+  },
+  {
+    "path": "migrations/002_questions.sql",
+    "bytes": 535,
+    "sha256": "97cc9e0465fec1e85c46eae444a634adbf60bef1a04df8a21f057cb8238fa98b"
+  }
+]

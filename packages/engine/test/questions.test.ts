@@ -1,0 +1,6 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {createState,applyCommand} from '../src/index.ts';
+import {calibration} from './fixture.ts';
+import {publicLevel} from '../../shared/src/index.ts';
+test('teacher questions are evaluated on server state and correct answers stay out of public views',()=>{const l=structuredClone(calibration);l.questions=[{id:'q-1',kind:'single',prompt:'MQTT QoS 2 的交付语义是什么？',options:[{id:'a',label:'至多一次'},{id:'b',label:'恰好一次'}],answer:'b',explanation:'QoS2通过协议握手为应用交付提供恰好一次语义，属于教学概念。',knowledge:['MQTT'],points:100}];const p=publicLevel(l);assert.equal(Object.hasOwn(p.questions![0]!,'answer'),false);assert.equal(Object.hasOwn(p.questions![0]!,'explanation'),false);let s=applyCommand(l,createState(l,1),{id:'question-start',revision:0,type:'start',payload:{}}).state;const wrong=applyCommand(l,s,{id:'question-wrong',revision:s.revision,type:'answer',target:'q-1',payload:{answer:'a'}});assert.equal(wrong.accepted,false);assert.equal(wrong.state.flags.includes('answered:q-1'),false);s=wrong.state;const correct=applyCommand(l,s,{id:'question-correct',revision:s.revision,type:'answer',target:'q-1',payload:{answer:'b'}});assert.equal(correct.accepted,true);assert.equal(correct.state.flags.includes('answered:q-1'),true);assert.match(correct.message,/QoS2/);});

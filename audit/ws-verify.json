@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-31T02:55:37.049Z",
+  "base": "https://iot.luo-jin-ai.com/legacy",
+  "wsUrl": "wss://iot.luo-jin-ai.com/legacy/ws",
+  "users": [
+    "wsavt6nh7",
+    "wsbvt6nh7"
+  ],
+  "roomId": "2dfc5f47-bc92-4138-af03-05514d680853",
+  "steps": [
+    {
+      "name": "双用户注册",
+      "ok": true,
+      "detail": "wsavt6nh7 / wsbvt6nh7"
+    },
+    {
+      "name": "获取关卡",
+      "ok": true,
+      "detail": "首关 level-01"
+    },
+    {
+      "name": "创建协作房间",
+      "ok": true,
+      "detail": "code=80778BCC status=waiting"
+    },
+    {
+      "name": "邀请码加入",
+      "ok": true,
+      "detail": "玩家 联机验收A/debug + 联机验收B/sensor"
+    },
+    {
+      "name": "WS 鉴权连接",
+      "ok": true,
+      "detail": "双用户 WS 均通过 Cookie 鉴权打开"
+    },
+    {
+      "name": "ping/pong",
+      "ok": true,
+      "detail": "serverTime A=1793415336184 B=1793415336184"
+    },
+    {
+      "name": "join 在线同步",
+      "ok": true,
+      "detail": "A 视野在线 2 人，B 视野在线 2 人"
+    },
+    {
+      "name": "双方准备",
+      "ok": true,
+      "detail": "A=network B=sensor"
+    },
+    {
+      "name": "队长开始",
+      "ok": true,
+      "detail": "status=playing 共享会话=true"
+    },
+    {
+      "name": "WS 命令执行",
+      "ok": true,
+      "detail": "inspect reader -> accepted=true 东门读卡器：读取单张访客卡；只有卡号匹配且授权为真时才输出1。 当前状态：fault；读数 0。"
+    },
+    {
+      "name": "状态广播到达队友",
+      "ok": true,
+      "detail": "revision 4 -> 5"
+    }
+  ]
+}

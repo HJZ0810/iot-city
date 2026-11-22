@@ -1,0 +1,17 @@
+#pragma once
+
+/**
+ * 仅在 config.h 中 DEVICE_TLS_VERIFY 设为 1 时生效。
+ * 把服务器证书链（PEM）粘到下面，例如 Let's Encrypt 的 ISRG Root X1，
+ * 或贵校自签 CA 的根证书。留空会导致 beginSslWithCA 失败。
+ */
+const char* ROOT_CA_PEM = R"EOF(
+-----BEGIN CERTIFICATE-----
+MIIFazCCA1OgAwIBAgIRAIIQz7DSQONZRGPgu2OCiwAwDQYJKoZIhvcNAQELBQAw
+TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+cmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwHhcNMTUwNjA0MTEwNDM4
+WhcNMzUwNjA0MTEwNDM4WjBPMQswCQYDVQQGEwJVUzEpMCcGA1UEChMgSW50ZXJu
+ZXQgU2VjdXJpdHkgUmVzZWFyY2ggR3JvdXAxFTATBgNVBAMTDElTUkcgUm9vdCBY
+MTC...（此处为截断示例，请替换为完整证书内容）
+-----END CERTIFICATE-----
+)EOF";

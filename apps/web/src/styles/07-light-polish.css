@@ -1,0 +1,222 @@
+/* ============================================================
+   白蓝 / 白绿 主题层
+   ------------------------------------------------------------
+   基础层（01–06、90）已从暗色机械转换到浅色，但“卡片=半透明深色块”
+   这种原始意图在浅底上会变成灰绿泥块。本层只做表面与层次修正：
+     1. 所有卡片统一为纯白 + 1px 细边 + 极轻投影（纸片感）
+     2. 背景给一层极淡的青绿—蓝雾，让白卡浮起来
+     3. 强调色收敛为“绿=主操作 / 蓝=信息 / 琥珀=提醒”
+   只改颜色与阴影，不动布局，避免结构回归。
+   ============================================================ */
+
+/* ---------- 1. 画布：极淡的青绿→蓝雾，卡片才浮得起来 ---------- */
+.app-shell{
+  background:
+    radial-gradient(900px 520px at 88% -12%, rgba(37,99,235,.06), transparent 62%),
+    radial-gradient(760px 460px at 6% 0%, rgba(15,155,125,.07), transparent 60%),
+    var(--bg);
+}
+.sidebar{background:#fff;border-right:1px solid var(--line)}
+.main-area{background:transparent}
+.page-content{background:transparent}
+
+/* ---------- 2. 卡片：纯白纸片 + 细边 + 轻投影 ---------- */
+.continue-panel,.mode-panel,.report-section,
+.metric-card,.chapter-feature,.task-card,.game-panel,
+.device-row,.npc-card,.leaderboard-surface,.leaderboard-row,
+.profile-card,.settings-card,.rules-panel,.sim-console,.question-card,
+.sandbox-entry-card,.sandbox-row,.sandbox-device-card,.sandbox-project-note,
+.terminal-panel,.terminal-device,.terminal-run,.terminal-level,
+.replay-player,.replay-inspector,.season-rules-card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  box-shadow:var(--shadow-sm);
+}
+
+/* 小颗粒：不加投影，靠底色与细边区分 */
+.mode-tile,.level-row,.journey-row,.chapter-mini,.sandbox-tools,
+.terminal-chapter,.terminal-level,.device-led,.task-marker{
+  background:var(--panel2);
+  border:1px solid var(--line);
+  box-shadow:none;
+}
+.mode-tile:hover,.level-row:hover,.terminal-level:hover,.terminal-chapter:hover{
+  background:#fff;border-color:rgba(15,155,125,.34);box-shadow:var(--shadow-sm);
+}
+.terminal-chapter.active{
+  background:#fff;border-color:var(--mint);box-shadow:0 0 0 2px rgba(15,155,125,.14);
+}
+.level-row.level-done{background:var(--mint-soft);border-color:rgba(15,155,125,.28)}
+
+/* ---------- 3. 顶栏：白色玻璃 + 细底线 ---------- */
+.topbar{
+  background:rgba(255,255,255,.86);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 1px 0 rgba(17,64,56,.02);
+}
+.breadcrumbs{color:var(--muted)}
+.breadcrumbs b{color:var(--text)}
+
+/* ---------- 4. 侧栏细节 ---------- */
+.brand-mark{
+  background:linear-gradient(145deg,var(--mint),#0a7b64);
+  color:#fff;
+  box-shadow:0 6px 16px rgba(15,155,125,.28);
+}
+.nav-item{color:#4d6663}
+.nav-item:hover{background:var(--panel3);color:var(--text)}
+.nav-item.active{
+  color:var(--mint2);
+  background:linear-gradient(90deg,rgba(15,155,125,.13),rgba(15,155,125,.03));
+  box-shadow:inset 2px 0 var(--mint);
+}
+.nav-label{color:#93a5a1}
+.city-label{border-color:var(--line);background:#fbfdfd;color:var(--muted)}
+.season-card{
+  background:linear-gradient(150deg,#f2fbf8,#eef6fd);
+  border:1px solid rgba(15,155,125,.18);
+}
+.season-track{background:rgba(15,155,125,.12)}
+.season-track>span{background:linear-gradient(90deg,var(--mint),#38bdf8)}
+
+/* ---------- 5. 按钮 ---------- */
+.button-primary{
+  background:linear-gradient(180deg,var(--mint),var(--mint2));
+  color:#fff;
+  border-color:rgba(11,127,104,.6);
+  box-shadow:0 1px 2px rgba(11,127,104,.24),0 4px 12px rgba(15,155,125,.18);
+}
+.button-primary:hover{background:linear-gradient(180deg,#12aa89,#0a7259)}
+.button-outline{background:#fff;border-color:rgba(17,64,56,.16);color:var(--text);box-shadow:var(--shadow-sm)}
+.button-outline:hover{border-color:rgba(15,155,125,.45);color:var(--mint2)}
+.button-quiet{background:transparent;border-color:rgba(17,64,56,.14);color:var(--muted)}
+.button-quiet:hover{background:var(--panel3);color:var(--text)}
+.icon-btn{color:var(--muted)}
+.icon-btn:hover{background:var(--panel3);color:var(--text)}
+
+/* ---------- 6. 文字层次 ---------- */
+h1,h2,h3,h4{color:var(--text)}
+.page-heading p,.section-head p{color:var(--muted)}
+.eyebrow{color:#8a9c98}
+.heading-stat{color:var(--muted);background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.notice{
+  background:#fff7ed;border:1px solid rgba(180,83,9,.24);color:#8a4a08;
+}
+.notice button{color:#8a4a08}
+
+/* ---------- 7. 首页英雄区：白→青→蓝的干净渐变 ---------- */
+.city-hero{
+  background:linear-gradient(104deg,#ffffff 0%,#f4fbf9 44%,#eef5fd 100%);
+  border-color:var(--line);
+  box-shadow:var(--shadow-md);
+}
+.city-backdrop{opacity:.92;background:radial-gradient(ellipse at 74% 42%,rgba(56,189,248,.13),transparent 46%),radial-gradient(ellipse at 88% 88%,rgba(15,155,125,.12),transparent 52%)}
+.city-backdrop:before{
+  background-image:
+    linear-gradient(rgba(37,99,235,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(37,99,235,.045) 1px,transparent 1px);
+}
+.skyline{opacity:.9}
+.skyline i:nth-child(3n){background:linear-gradient(100deg,#ffffff,#dbe9f4 50%,#eaf3fa)}
+.grid-floor{
+  background-image:
+    linear-gradient(rgba(15,155,125,.16) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(15,155,125,.16) 1px,transparent 1px);
+}
+.city-orb{border:0}
+.orb-one{
+  background:radial-gradient(circle at 36% 34%,rgba(56,189,248,.18),rgba(255,255,255,0) 62%);
+  border:1px solid rgba(37,99,235,.12);
+  box-shadow:0 0 80px rgba(56,189,248,.16);
+}
+.orb-two{background:var(--mint);box-shadow:0 0 18px 5px rgba(15,155,125,.5)}
+.hero-kicker{color:#7b8f8b}
+.hero-orbit-label{color:var(--mint2)}
+.orbit-ring{border-color:rgba(15,155,125,.22)}
+
+/* ---------- 8. 进度 / 轨道 ---------- */
+.progress-line,.knowledge-bar,.chapter-meter,.season-track,.scene-map-grid{background:rgba(17,64,56,.07)}
+.progress-line>span,.progress-line>i,.chapter-meter>span{background:linear-gradient(90deg,var(--mint),#38bdf8)}
+
+/* ---------- 9. 表格与榜单 ---------- */
+.result-table th{color:var(--muted2);border-bottom-color:var(--line)}
+.result-table td{border-bottom-color:var(--line2)}
+.leaderboard-row{border-color:var(--line)}
+.leaderboard-row.rank-1{background:linear-gradient(90deg,#fffbeb,#fff)}
+.leaderboard-row.rank-2{background:linear-gradient(90deg,#f8fafc,#fff)}
+.leaderboard-row.rank-3{background:linear-gradient(90deg,#fef7f2,#fff)}
+.rank-number{color:var(--muted2)}
+
+/* ---------- 10. 终端页的板载屏幕保持“深色屏幕”质感 ---------- */
+.board-screen-bezel{background:#0f1b1f;border-color:#1d2d33}
+.board-screen-bezel h4{color:#e8f6f1}
+.board-screen-sub{color:#8fadb8}
+.board-screen-bar,.board-screen-foot{color:#5f7d88;border-top-color:#1c2a30}
+.board-keys span{background:#142024;border-color:#22343b;color:#9db6bf}
+.hv-text{color:#e8f6f1}
+
+/* ---------- 11. 游戏控制台 ---------- */
+.game-toolbar{background:#fff;border-bottom:1px solid var(--line)}
+.task-card{background:#fff}
+.task-card.is-done{background:var(--mint-soft);border-color:rgba(15,155,125,.3)}
+.current-objective{background:var(--blue-soft);border-color:rgba(37,99,235,.22);color:#1e3a8a}
+.parameter-row{border-bottom-color:var(--line2)}
+.device-row.selected{border-color:rgba(37,99,235,.45);box-shadow:0 0 0 2px rgba(37,99,235,.12)}
+.revision-tag{background:var(--panel3);color:var(--muted)}
+
+/* ---------- 12. 空态 / 加载 ---------- */
+.empty-state{color:var(--muted)}
+.boot{background:var(--bg);color:var(--muted)}
+
+/* ---------- 13. 章节插画与关卡行：把灰块换成浅色纸感 ---------- */
+.chapter-art{
+  background:
+    radial-gradient(circle at 50% 38%, color-mix(in srgb, var(--chapter-color) 16%, #ffffff) 0%, #ffffff 68%),
+    linear-gradient(160deg,#fbfdfe,#f2f7fa);
+  border:1px solid var(--line);
+}
+.chapter-art-sigil{
+  background:#fff;
+  border:1px solid color-mix(in srgb, var(--chapter-color) 40%, #ffffff);
+  box-shadow:0 8px 22px color-mix(in srgb, var(--chapter-color) 16%, transparent);
+  color:color-mix(in srgb, var(--chapter-color) 78%, #122a26);
+}
+.chapter-meter{background:rgba(17,64,56,.08)}
+.chapter-meter>span{background:linear-gradient(90deg,var(--mint),#38bdf8)}
+.chapter-story{color:var(--muted)}
+.chapter-tabs button{color:var(--muted)}
+.chapter-tabs button.active{color:var(--mint2);background:#fff}
+.chapter-mini{background:var(--mint-soft);border-color:rgba(15,155,125,.22);color:var(--mint2)}
+.level-time{color:#5f706c}
+.level-time svg{color:#7e8f8b}
+.level-difficulty{color:#c2760a}
+.level-difficulty .is-off{color:#cbd5d1}
+.level-index{color:#8d9d99}
+.level-main b{color:var(--text)}
+.level-main small{color:var(--muted)}
+.level-row .button{white-space:nowrap}
+.level-row .button:disabled{background:var(--panel3);border-color:var(--line);color:var(--muted2);opacity:1}
+
+/* ---------- 14. 表单与输入 ---------- */
+input,select,textarea{background:#fff;border:1px solid rgba(17,64,56,.16);color:var(--text)}
+input::placeholder,textarea::placeholder{color:#9aaba6}
+input:focus,select:focus,textarea:focus{border-color:var(--mint);box-shadow:0 0 0 3px rgba(15,155,125,.12)}
+.segmented{background:var(--panel3);border:1px solid var(--line)}
+.segmented button.active{background:#fff;color:var(--mint2);box-shadow:var(--shadow-sm)}
+.toggle{background:#d6e0dd}
+.toggle.on{background:var(--mint)}
+
+/* 简报 / 结算浮层：白卡 + 深字，压在实景上也能读清 */
+.briefing-panel,.phase-overlay{color:var(--text)}
+.briefing-panel h2,.phase-overlay h2{color:var(--text);margin:6px 0 10px}
+.briefing-panel p,.phase-overlay p{color:var(--muted);font-size:13px;line-height:1.85}
+.briefing-knowledge span{background:var(--mint-soft);color:var(--mint2);border:1px solid rgba(15,155,125,.18)}
+.result-number{color:var(--text)}
+.result-number small{color:var(--muted2)}
+.scene-loading{background:linear-gradient(180deg,#f7fbfa,#eef5f8);color:var(--muted)}
+.scene-loading-ring{width:26px;height:26px;border-radius:50%;border:2px solid rgba(15,155,125,.2);border-top-color:var(--mint);animation:terminal-spin .9s linear infinite;display:inline-block}
+.scene-meta{color:#3f5450;background:rgba(255,255,255,.78);border:1px solid var(--line);border-radius:20px;padding:4px 10px;backdrop-filter:blur(6px)}
+.scene-hint{color:#7d918c}
+.scene-map-toolbar,.scene-3d-toolbar{background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow-sm)}
+.scene-map-toolbar button{color:var(--muted)}
+.scene-map-toolbar button:hover{background:var(--panel3);color:var(--mint2)}

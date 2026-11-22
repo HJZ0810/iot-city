@@ -1,0 +1,10 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {createState} from '../src/index.ts';
+import {observe,simulateTick} from '../src/simulation.ts';
+import {calibration} from './fixture.ts';
+import type {LevelDefinition,ParameterDefinition} from '../../shared/src/index.ts';
+function mqtt():LevelDefinition{const l=structuredClone(calibration);const p=(value:string|number|boolean):ParameterDefinition=>({label:'教学参数',type:typeof value==='boolean'?'boolean':typeof value==='number'?'number':'text',value});l.devices=[{id:'pub',kind:'terminal',label:'发布端',model:'MQTT教学',position:[0,0,0],installed:true,enabled:true,faults:[],description:'教学消息源',parameters:{topic:p('city/temp'),online:p(true),qos:p(0),retries:p(3),retain:p(false),will:p(true)}},{id:'sub',kind:'cloud',label:'订阅端',model:'MQTT教学',position:[1,0,0],installed:true,enabled:true,faults:[],description:'教学订阅中心',parameters:{subscription:p('city/+'),online:p(true),authenticated:p(true)}}];l.links=[{from:'pub',to:'sub',kind:'network',quality:.5}];return l;}
+test('QoS retries affect delivery probability and exactly-once suppresses duplicate application deliveries',()=>{const l=mqtt(),s=createState(l,1);assert.equal(s.environment.deliveryRate,.5);s.devices.pub!.parameters.qos=1;observe(l,s);assert.equal(s.environment.deliveryRate,.9375);assert.equal(s.environment.duplicateMessages,1);s.devices.pub!.parameters.qos=2;observe(l,s);assert.equal(s.environment.duplicateMessages,0);});
+test('retained teaching message remains observable after its publisher is offline',()=>{const l=mqtt(),s=createState(l,1);s.devices.pub!.parameters.retain=true;simulateTick(l,s);s.devices.pub!.parameters.online=false;observe(l,s);assert.equal(s.environment.retainedMessages,1);assert.equal(s.environment.delivery,0);});
+test('last will increments once per unexpected offline transition',()=>{const l=mqtt(),s=createState(l,1);s.devices.pub!.parameters.online=false;observe(l,s);observe(l,s);assert.equal(s.environment.willMessages,1);s.devices.pub!.parameters.online=true;observe(l,s);s.devices.pub!.parameters.online=false;observe(l,s);assert.equal(s.environment.willMessages,2);});
