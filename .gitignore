@@ -54,4 +54,19 @@ desktop.ini
 ~$*
 .~lock.*
 .github/workflows/
+nul
+NUL
+con
+CON
+aux
+AUX
+prn
+PRN
+com1
+com2
+com3
+com4
+lpt1
+lpt2
+lpt3
 # ==== 备份自动生成（由 WorkBuddy 追加，勿手工删除本段）====
