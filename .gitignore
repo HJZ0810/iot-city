@@ -47,6 +47,7 @@ DerivedData/
 .angular/
 .svelte-kit/
 .vercel/
+.git-backup/
 *.log
 .DS_Store
 Thumbs.db
